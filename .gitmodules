@@ -1,0 +1,6 @@
+[submodule "d-track-front"]
+	path = d-track-front
+	url = https://gitlab.com/ddda/d-track/d-track-front
+[submodule "d-track-back"]
+	path = d-track-back
+	url = https://gitlab.com/ddda/d-track/d-track-back

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+WDIR=./
+
+# shellcheck disable=SC2164
+cd $WDIR
+
+docker-compose exec -T postgres psql -U postgres -d d_track -v "ON_ERROR_STOP=1" -f ${WDIR}/scripts/migrations/migrate_"$1".sql
