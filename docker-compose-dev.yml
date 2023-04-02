@@ -1,0 +1,24 @@
+version: "3"
+services:
+  postgres:
+    image: "postgres:15.2"
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - ${PWD}/scripts:/scripts:ro
+      - ${PWD}/backups:/backups:rw
+      - dtrack-pg-data:/var/lib/postgresql/data/:rw
+    environment:
+      - "TZ=Europe/Moscow"
+      - "PGTZ=Europe/Moscow"
+      - "POSTGRES_PASSWORD=postgres"
+      - "PGDATA=/var/lib/postgresql/data/"
+    logging:
+      options:
+        max-size: "1024k"
+        max-file: "5"
+
+volumes:
+  dtrack-pg-data:
+
