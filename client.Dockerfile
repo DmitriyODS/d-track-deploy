@@ -2,7 +2,7 @@ FROM node:18-alpine AS dTrackBuilder
 LABEL stage=dTrackBuilder
 
 ARG base_url
-ENV REACT_APP_API_BASE_URL=$base_url
+ENV REACT_APP_SERVER=$base_url
 
 RUN npm update npm -g
 

@@ -19,7 +19,7 @@ back-build:
 
 front-build:
 	@echo "start making image" $(IMAGE_D_TRACK_FRONT)
-	docker build --build-arg base_url=http://back:8080/ -f ./client.Dockerfile -t $(IMAGE_D_TRACK_FRONT) .
+	docker build --build-arg base_url=back:8080 -f ./client.Dockerfile -t $(IMAGE_D_TRACK_FRONT) .
 	@echo "finish making image" $(IMAGE_D_TRACK_FRONT)
 
 back-push:
