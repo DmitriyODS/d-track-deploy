@@ -22,7 +22,7 @@ services:
         max-file: "5"
 
   back:
-    image: "osipovskijdima/d-track-back:0.1.0"
+    image: "osipovskijdima/d-track-back:20230404.1"
     ports:
       - "8080:8080"
     networks:
@@ -39,7 +39,7 @@ services:
         max-file: "5"
 
   front:
-    image: "osipovskijdima/d-track-front:0.1.0"
+    image: "osipovskijdima/d-track-front:20230404.1"
     ports:
       - "80:80"
     networks:
