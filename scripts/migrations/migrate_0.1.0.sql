@@ -52,7 +52,7 @@ ON CONFLICT (id) DO UPDATE SET id=excluded.id,
 
 SELECT setval('user_data.task_states_id_seq', (SELECT MAX(id) + 1 FROM user_data.task_states));
 
-INSERT INTO user_data.bid_states(id, name)
+INSERT INTO user_data.claim_states(id, name)
 VALUES (1, 'Приёмка'),
        (2, 'Выезд'),
        (3, 'Ремонт'),
@@ -62,7 +62,7 @@ VALUES (1, 'Приёмка'),
 ON CONFLICT (id) DO UPDATE SET id=excluded.id,
                                name=excluded.name;
 
-SELECT setval('user_data.bid_states_id_seq', (SELECT MAX(id) + 1 FROM user_data.bid_states));
+SELECT setval('user_data.claim_states_id_seq', (SELECT MAX(id) + 1 FROM user_data.claim_states));
 
 INSERT INTO user_data.services(id, name)
 VALUES (1, 'Обслуживание'),
