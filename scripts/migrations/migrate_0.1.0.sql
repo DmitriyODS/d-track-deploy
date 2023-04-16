@@ -20,9 +20,9 @@ SELECT setval('user_data.positions_id_seq', (SELECT MAX(id) + 1 FROM user_data.p
 INSERT INTO user_data.level_accesses(id, "name", "access")
 VALUES (0, 'Не задано', '\x00'),
        (1, 'Администратор', '\xFF'),
-       (2, 'Мастер', '\x1B'),
-       (3, 'Менеджер', '\x3F'),
-       (4, 'Документалист', '\xC3'),
+       (2, 'Мастер', '\x5B'),
+       (3, 'Менеджер', '\x7F'),
+       (4, 'Документалист', '\x53'),
        (5, 'Руководитель', '\xFF')
 ON CONFLICT (id) DO UPDATE SET id=excluded.id,
                                "name"=excluded."name",
